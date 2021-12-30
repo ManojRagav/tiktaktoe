@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stepper</title>
+    <link rel="stylesheet" type="text/css" href="stepstyle.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+</head>
+<body>
+
+        <div class="overall_container">
+            <h1>Stepper</h1>
+            <div class="progress-container">
+                <div class="progress" id ="progress"></div>
+                <div class="circle active">R</div>
+                <div class="circle ">A</div>
+                <div class="circle ">G</div>
+                <div class="circle ">A</div>
+                <div class="circle ">V</div>
+
+            </div>
+            <button class="btn" id="prev" disabled><i class="fas fa-arrow-left"></i></button>
+            <button class="btn" id="next" ><i class="fas fa-arrow-right"></i></button>
+        </div>
+
+
+
+        <script >
+        const progress = document.getElementById("progress");
+        const prev = document.getElementById("prev");
+        const next =document.getElementById("next");
+        const circles = document.querySelectorAll(".circle");
+        let currentActive = 1;
+
+        //forward icon
+        next.addEventListener("click",()=>{
+            currentActive++;
+            if(currentActive > circles.length){
+                currentActive = circles.length;
+            }
+            console.log(currentActive)
+            update();
+        });
+
+        // backword icon
+        prev.addEventListener("click",()=>{
+            currentActive --;
+            
+            if(currentActive < 1){
+                currentActive = 1;
+            }
+            update();
+        });
+
+        function update(){
+            circles.forEach((circle, idx) =>{
+                if(idx < currentActive){
+                    circle.classList.add("active");
+                }else{
+                    circle.classList.remove("active");
+                }
+            });
+        const actives = document.querySelectorAll(".active");
+
+        progress.style.width=((actives.length -1 ) / (circles.length -1)) * 100 + "%";
+
+            if(currentActive == 5){
+                alert("Happy New Year")
+            }
+            else if (currentActive ===1){
+                prev.disabled = true;
+            }
+            else if( currentActive === circles.length){
+                nextarrow.disabled=true;
+            }
+            else {
+                prev.disabled= false;
+                nextarrow.disabled=false;
+            }
+            
+
+    }
+
+
+
+
+</script>
+</body>
+</html> 

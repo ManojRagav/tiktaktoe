@@ -1,0 +1,32 @@
+*{
+    border: 0px;
+    margin: 0px;
+    padding: 0px;
+}
+section{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card_screen{
+    height: 350px;
+    width: 70px;
+    border-radius: 90px;
+    border: solid 1px #242424;
+    margin: 5% 0 0 0;
+    overflow: hidden;
+}
+.img{
+    background-position: center;
+    height: 350px;
+    width: 100%;
+    background-repeat: no repeat;
+    border-radius: 90px;
+    object-fit: cover;
+}
+/* .card-screen:hover{
+    width: 300px;
+    border: solid 2px black;
+    transition: scale(1);
+} */

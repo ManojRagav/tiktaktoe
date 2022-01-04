@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrolling Effect</title>
+    <link rel="stylesheet" type="text/css" href="./scrollstyle.css">
+</head>
+<body>
+    <h2>Animations On Scroll</h2>
+    <div class="box">
+        <h4>content</h4>
+    </div>
+    <div class="box">
+        <h4>content</h4>
+    </div>
+    <div class="box">
+        <h4>content</h4>
+    </div>
+    <div class="box">
+        <h4>content</h4>
+    </div>
+    <div class="box">
+        <h4>content</h4>
+    </div>
+    <div class="box">
+        <h4>content</h4>
+    </div>
+    <div class="box">
+        <h4>content</h4>
+    </div>
+    <div class="box">
+        <h4>content</h4>
+    </div>
+    <div class="box">
+        <h4>content</h4>
+    </div>
+
+    <script>
+      const boxes = document.querySelectorAll('.box');
+      window.addEventListener('scroll', scrolling);     
+
+        function scrolling() {
+            const triggerBottom = window.innerHeight * (4/5);
+            boxes.forEach(box => {
+                const boxTop = box.getBoundingClientRect().top;
+                if(triggerBottom > boxTop) {
+                    box.classList.add('show');
+                }else{
+                    box.classList.remove('show')
+                }
+            })
+        }
+    </script>
+</body>
+</html>

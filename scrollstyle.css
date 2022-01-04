@@ -1,0 +1,40 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #f3f2f0;
+    margin: 0;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    overflow-x:hidden;
+}
+
+.box{
+    background-color: steelblue;
+    margin:10px;
+    height:200px;
+    width:200px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(600%);
+    transition: transform 0.5s ease;
+}
+
+.box:nth-of-type(even){
+     transform: translateX(-600%);
+}
+
+.box.show{
+    transform: translateX(0);
+}
+
+.box h4{
+    color:#FFF;
+    font-size: 26px;
+}
